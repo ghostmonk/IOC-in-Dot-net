@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{925272DA-22CF-4A33-BA2D-11CCAF0C9069}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Democracy</RootNamespace>
+    <AssemblyName>Democracy</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Definitions\Issue.cs" />
+    <Compile Include="Definitions\ManagementStyle.cs" />
+    <Compile Include="Definitions\PartyType.cs" />
+    <Compile Include="Government\IBureaucrat.cs" />
+    <Compile Include="Government\ICountry.cs" />
+    <Compile Include="Government\IDepartment.cs" />
+    <Compile Include="Government\IEntity.cs" />
+    <Compile Include="Government\IGovernment.cs" />
+    <Compile Include="Government\IPoliticalParty.cs" />
+    <Compile Include="Government\IPolitician.cs" />
+    <Compile Include="Government\IPopulous.cs" />
+    <Compile Include="Government\IRiding.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="World\NorthAmerica\Canada\Canada.cs" />
+    <Compile Include="World\NorthAmerica\Canada\CanadianGovernment.cs" />
+    <Compile Include="World\NorthAmerica\Canada\Conservatives.cs" />
+    <Compile Include="World\NorthAmerica\Canada\Drone.cs" />
+    <Compile Include="World\NorthAmerica\Canada\Duplicitous.cs" />
+    <Compile Include="World\NorthAmerica\Canada\Inspector.cs" />
+    <Compile Include="World\NorthAmerica\Canada\Montreal.cs" />
+    <Compile Include="World\NorthAmerica\Canada\MontrealPopulous.cs" />
+    <Compile Include="World\NorthAmerica\Canada\PublicHealthWorks.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
