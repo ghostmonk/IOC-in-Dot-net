@@ -12,9 +12,9 @@ namespace Democracy.Government
 
         bool HasPortfolio { get; }
 
-        float ApprovalRating { get; }
+        double ApprovalRating { get; }
 
-        float AdjustApprovalRating( float adjustment );
+        double AdjustApprovalRating( double adjustment );
 
         string GetSoundBite( Issue issue );
     }

@@ -4,56 +4,20 @@ using System.Linq;
 using System.Text;
 using Democracy.Definitions;
 using Democracy.Government;
+using Democracy.Government.GeneralImp;
 
 namespace Democracy.World.NorthAmerica.Canada
 {
-    public class Conservatives : IPoliticalParty
+    public class Conservatives : PoliticalParty
     {
-        private float adjustment;
-
-        public Conservatives()
+        public Conservatives() : base( "Conservatives of Canada" )
         {
             Type = PartyType.Conservative;
-            Name = "Conservatives of Canada";
-            Politicians = new List<IPolitician>();
         }
 
-        public string Name { get; private set; }
-
-        public float ApprovalRating
+        override public string GetPosition( Issue issue )
         {
-            get
-            {
-                return CalculateApprovalRating() + adjustment;
-            }
-        }
-
-        public PartyType Type { get; private set; }
-
-        public IPolitician Leader { get; set; }
-
-        public List<IPolitician> Politicians { get; private set; }
-
-        public string GetPosition( Issue issue )
-        {
-            return "";
-        }
-
-        public void AdjustApprovalRating( float adjustment )
-        {
-            this.adjustment += adjustment;
-        }
-
-        private float CalculateApprovalRating()
-        {
-            float rating = 0;
-
-            foreach( IPolitician politician in Politicians )
-            {
-                rating += politician.ApprovalRating;    
-            }
-
-            return Politicians.Count > 0 ? rating / Politicians.Count : 0;
+            return "We are shit heads";
         }
     }
 }

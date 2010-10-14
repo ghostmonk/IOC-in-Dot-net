@@ -4,12 +4,10 @@ namespace Democracy.Government
 {
     public interface IPopulous : IEntity
     {
-        bool IsLeftLeaning { get; set; }
+        double BipartisanRating { get; set; }
 
-        bool IsRightLeaning { get; set; }
+        void AddImportantIssue( Issue issue, double importance );
 
-        void AddImportantIssue( Issue issue, float importance );
-
-        float RateStanceOnIssue( Issue issue, float polarity, float modifier );
+        double RateStanceOnIssue( Issue issue, double polarity, double modifier );
     }
 }

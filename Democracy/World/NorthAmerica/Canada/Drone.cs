@@ -4,22 +4,16 @@ using System.Linq;
 using System.Text;
 using Democracy.Definitions;
 using Democracy.Government;
+using Democracy.Government.GeneralImp;
 
 namespace Democracy.World.NorthAmerica.Canada
 {
-    class Drone : IBureaucrat
+    public class Drone : Bureaucrat
     {
-        public Drone( string name, IDepartment department, ManagementStyle managementStyle )
+        public Drone( string name, IDepartment department, ManagementStyle managementStyle ) : base( name )
         {
-            Name = name;
             Department = department;
             ManagementStyle = managementStyle;
         }
-
-        public string Name { get; private set; }
-
-        public IDepartment Department { get; set; }
-
-        public ManagementStyle ManagementStyle { get; set; }
     }
 }

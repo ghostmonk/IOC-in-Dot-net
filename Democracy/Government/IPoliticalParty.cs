@@ -5,7 +5,7 @@ namespace Democracy.Government
 {
     public interface IPoliticalParty : IEntity
     {
-        float ApprovalRating { get; }
+        double ApprovalRating { get; }
 
         PartyType Type { get; }
 
@@ -15,6 +15,6 @@ namespace Democracy.Government
 
         string GetPosition( Issue issue );
 
-        void AdjustApprovalRating( float adjustment );
+        void AdjustApprovalRating( double adjustment );
     }
 }

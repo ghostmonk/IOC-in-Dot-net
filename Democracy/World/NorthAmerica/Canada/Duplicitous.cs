@@ -4,36 +4,20 @@ using System.Linq;
 using System.Text;
 using Democracy.Definitions;
 using Democracy.Government;
+using Democracy.Government.GeneralImp;
 
 namespace Democracy.World.NorthAmerica.Canada
 {
-    public class Duplicitous : IPolitician 
+    public class Duplicitous : Politician, IPolitician 
     {
         private IRiding riding;
 
-        public Duplicitous( string name, IRiding riding )
+        public Duplicitous( string name, IRiding riding ) : base( name )
         {
-            Name = name;
             Riding = riding;
         }
-        
-        public string Name { get; private set; }
 
-        public float ApprovalRating { get; private set; }
-
-        public IPoliticalParty Party { get; set; }
-
-        public IDepartment Ministry { get; set; }
-
-        public bool HasPortfolio
-        {
-            get
-            {
-                return Ministry != null;
-            }
-        }
-
-        public IRiding Riding
+        override public IRiding Riding
         {
             get { return riding; } 
             
@@ -44,22 +28,16 @@ namespace Democracy.World.NorthAmerica.Canada
             }
         }
 
-        public float AdjustApprovalRating( float adjustment )
-        {
-            ApprovalRating += adjustment;
-            return ApprovalRating;
-        }
-
-        public string GetSoundBite( Issue issue )
+        override public string GetSoundBite( Issue issue )
         {
             return DuplicitousConstitution.Responses[ issue ];
         }
 
-        private float CalculateApprovalRating()
+        private double CalculateApprovalRating()
         {
-            float rating = 0;
+            double rating = 0;
 
-            foreach( KeyValuePair<Issue, float> issue in DuplicitousConstitution.IssueRatings )
+            foreach( KeyValuePair<Issue, double> issue in DuplicitousConstitution.IssueRatings )
             {
                  rating += riding.Populous.RateStanceOnIssue( issue.Key, issue.Value, 0 );
             }
@@ -80,7 +58,7 @@ namespace Democracy.World.NorthAmerica.Canada
             { Issue.Taxes, "Duplicitous response on Taxes" }
         };
 
-        public static IDictionary<Issue, float> IssueRatings = new Dictionary<Issue, float>()
+        public static IDictionary<Issue, double> IssueRatings = new Dictionary<Issue, double>()
         {
             { Issue.Transportation, 40 },
             { Issue.Abortion, -50 },

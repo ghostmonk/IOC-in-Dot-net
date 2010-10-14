@@ -43,6 +43,13 @@
     <Compile Include="Definitions\Issue.cs" />
     <Compile Include="Definitions\ManagementStyle.cs" />
     <Compile Include="Definitions\PartyType.cs" />
+    <Compile Include="Government\GeneralImp\Bureaucrat.cs" />
+    <Compile Include="Government\GeneralImp\Entity.cs" />
+    <Compile Include="Government\GeneralImp\Government.cs" />
+    <Compile Include="Government\GeneralImp\PoliticalParty.cs" />
+    <Compile Include="Government\GeneralImp\Politician.cs" />
+    <Compile Include="Government\GeneralImp\Populous.cs" />
+    <Compile Include="Government\GeneralImp\Riding.cs" />
     <Compile Include="Government\IBureaucrat.cs" />
     <Compile Include="Government\ICountry.cs" />
     <Compile Include="Government\IDepartment.cs" />

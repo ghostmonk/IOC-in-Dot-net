@@ -4,25 +4,15 @@ using System.Linq;
 using System.Text;
 using Democracy.Definitions;
 using Democracy.Government;
+using Democracy.Government.GeneralImp;
 
 namespace Democracy.World.NorthAmerica.Canada
 {
-    public class MontrealPopulous : IPopulous
+    public class MontrealPopulous : Populous
     {
-        public string Name { get; private set; }
-
-        public bool IsLeftLeaning { get; set; }
-
-        public bool IsRightLeaning { get; set; }
-
-        public void AddImportantIssue( Issue issue, float importance )
+        public MontrealPopulous() : base( "City of Montreal" )
         {
-            
-        }
-
-        public float RateStanceOnIssue( Issue issue, float polarity, float modifier )
-        {
-            return new Random().Next();
+            BipartisanRating = -0.4f;
         }
     }
 }

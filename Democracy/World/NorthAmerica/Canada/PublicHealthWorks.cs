@@ -8,16 +8,23 @@ namespace Democracy.World.NorthAmerica.Canada
 {
     public class PublicHealthWorks : IDepartment 
     {
+        public PublicHealthWorks()
+        {
+            Name = "Public Health Works";
+            Bureaucrats = new List<IBureaucrat>();
+        }
+
         public string Name { get; private set; }
 
         public IPolitician HeadMinister { get; set; }
 
-        public float Budget { get; set; }
+        public double Budget { get; set; }
 
         public List<IBureaucrat> Bureaucrats { get; private set; }
 
         public IDepartment AddBureaucrat( IBureaucrat bureaucrat )
         {
+            Bureaucrats.Add( bureaucrat );
             return this;
         }
     }

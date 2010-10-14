@@ -10,6 +10,6 @@ namespace Democracy.Government
 
         IDepartment AddBureaucrat( IBureaucrat bureaucrat );
 
-        float Budget { get; set; }
+        double Budget { get; set; }
     }
 }
