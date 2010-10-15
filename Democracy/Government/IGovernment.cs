@@ -10,9 +10,9 @@ namespace Democracy.Government
 
         List<IDepartment> Departments { get; }
 
-        void AddPoliticalParty( IPoliticalParty party );
+        IGovernment AddPoliticalParty( IPoliticalParty party );
 
-        void AddDepartment( IDepartment department );
+        IGovernment AddDepartment( IDepartment department );
 
         void CallElection();
 

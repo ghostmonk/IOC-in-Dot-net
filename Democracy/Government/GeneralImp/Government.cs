@@ -21,14 +21,16 @@ namespace Democracy.Government.GeneralImp
 
         public virtual List<IDepartment> Departments { get; private set; }
 
-        public virtual void AddPoliticalParty( IPoliticalParty party )
+        public virtual IGovernment AddPoliticalParty( IPoliticalParty party )
         {
             PoliticalParties.Add( party );
+            return this;
         }
 
-        public virtual void AddDepartment( IDepartment department )
+        public virtual IGovernment AddDepartment( IDepartment department )
         {
             Departments.Add( department );
+            return this;
         }
 
         public virtual void CallElection()

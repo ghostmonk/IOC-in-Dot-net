@@ -8,9 +8,12 @@
 
         <StackPanel Height="166" HorizontalAlignment="Left" Margin="11,73,0,0" Name="stackPanel1" VerticalAlignment="Top" Width="200">
             <Label Content="Party" Height="28" Name="label1" HorizontalAlignment="Left" />
-            <ComboBox Height="23" Name="partiesCB" Width="120" HorizontalAlignment="Left" SelectionChanged="OnPartySelection" />
+            <ComboBox Height="23" Name="partiesCB" Width="120" HorizontalAlignment="Left" SelectionChanged="OnPartySelection" DisplayMemberPath="Name" />
             <Label Content="Politician" Height="28" Name="label2" HorizontalAlignment="Left" />
-            <ComboBox Height="23" Name="politiciansCB" Width="120" HorizontalAlignment="Left" />
+            <ComboBox Height="23" 
+                      Name="politiciansCB" Width="120" HorizontalAlignment="Left" 
+                      ItemsSource="{Binding ElementName=partiesCB, Path=SelectedItem.Politicians}" 
+                      DisplayMemberPath="Name" />
             <Label Content="Issue" Height="28" Name="label3" HorizontalAlignment="Left" />
             <ComboBox Height="18" Name="issuesCB" Width="120" HorizontalAlignment="Left" />
         </StackPanel>
@@ -19,7 +22,6 @@
         <Button Content="Get Quote" Height="23" HorizontalAlignment="Left" Margin="232,198,0,0" Name="button1" Click="OnQetQuote"  VerticalAlignment="Top" Width="75" />
 
         <Button Content="Call Election" Height="23" HorizontalAlignment="Left" Margin="11,269,0,0" Click="OnCallElectionClick" VerticalAlignment="Top" Width="75" />
-        
         
     </Grid>
 </Window>

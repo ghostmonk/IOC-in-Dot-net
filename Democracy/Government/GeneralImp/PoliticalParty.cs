@@ -14,9 +14,12 @@ namespace Democracy.Government.GeneralImp
         public PoliticalParty( string name ) : base( name )
         {
             adjustment = 0;
+            Politicians = new List<IPolitician>();
         }
 
         public virtual PartyType Type { get; set; }
+
+        public virtual List<IPolitician> Politicians { get; set; }
 
         public virtual IPolitician Leader
         {
@@ -27,8 +30,6 @@ namespace Democracy.Government.GeneralImp
                 if( !Politicians.Contains( leader ) ) Politicians.Add( leader );
             }
         }
-
-        public virtual List<IPolitician> Politicians { get; set; }
 
         public double ApprovalRating
         {
@@ -46,6 +47,12 @@ namespace Democracy.Government.GeneralImp
         public virtual void AdjustApprovalRating( double adjustment )
         {
             this.adjustment += adjustment;
+        }
+
+        public IPoliticalParty AddPolitician( IPolitician politician )
+        {
+            Politicians.Add( politician );
+            return this;
         }
 
         private double CalculateApprovalRating()

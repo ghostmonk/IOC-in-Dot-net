@@ -16,5 +16,7 @@ namespace Democracy.Government
         string GetPosition( Issue issue );
 
         void AdjustApprovalRating( double adjustment );
+
+        IPoliticalParty AddPolitician( IPolitician politician );
     }
 }

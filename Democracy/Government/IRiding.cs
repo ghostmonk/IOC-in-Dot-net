@@ -4,7 +4,7 @@ namespace Democracy.Government
 {
     public interface IRiding : IEntity
     {
-        int Population { get; }
+        int Population { get; set; }
 
         IPopulous Populous { get; }
 
